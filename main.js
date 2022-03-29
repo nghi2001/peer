@@ -23,4 +23,4 @@ io.on('connection', socket => {
         socket.to(roomId).emit('user-connected',userId)
     })
 })
-server.listen(3000)
+server.listen(process.env.PORT || 3000)
