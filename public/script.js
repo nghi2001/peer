@@ -45,6 +45,8 @@ navigator.mediaDevices.getUserMedia({
 function connectToNewUser(userid,stream){
     let call = peer.call(userid,stream)
     let video = document.createElement('video');
+    video.playsInline = true;
+    video.autoplay = true;
     video.classList.add('client')
     call.on('stream', userVideoStream => {
         console.log('video from recive');
