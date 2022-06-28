@@ -1,3 +1,8 @@
+if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    alert("error");
+    throw new Error(
+      'Browser API navigator.mediaDevices.getUserMedia not available');
+  } else {alert("aljcndạnc")}
 const socket = io('/');
 const peer = new Peer()
 console.log(peer);
@@ -10,8 +15,9 @@ peer.on('open', function(id) {
 const videoGrid = document.getElementById('video-grid');
 console.log(videoGrid);
 const myVideo = document.createElement('video');
-myVideo.muted = true
-
+myVideo.muted = true;
+myVideo.autoplay = true;
+myVideo.playsInline = true;
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio:true
